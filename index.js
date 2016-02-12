@@ -1,15 +1,15 @@
 
-var http = require('http'),
-    fs = require('fs');
+var express = require("express");
+var app     = express();
+var path    = require("path");
 
 
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(5000);
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
 });
+
+app.listen(3000);
+
+
+
+console.log("Running at Port 3000");
