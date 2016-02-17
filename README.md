@@ -1,3 +1,3 @@
-# angular_test
+# Angular-test-example
 
-testing angular hello world
+Sample angular project to test and deploy to heroku using SnapCI
